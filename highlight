@@ -1,0 +1,130 @@
+# Python Fundamentals and Basics of OOP
+
+# --- Python Fundamentals ---
+
+# 1. Basic Syntax
+print("Welcome to Python Fundamentals!")
+
+# 2. Data Types
+# Numbers
+a = 10          # Integer
+b = 3.14       # Float
+c = 2 + 3j     # Complex
+
+# Strings
+name = "Alice"
+
+# 3. Variables
+x = 5
+y = "Hello"
+
+# 4. Control Structures
+if x > 0:
+    print(f"{x} is positive.")
+elif x < 0:
+    print(f"{x} is negative.")
+else:
+    print("x is zero.")
+
+# Loops
+print("For Loop:")
+for i in range(5):  # Prints 0 to 4
+    print(i)
+
+print("While Loop:")
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+
+# 5. Functions
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Alice"))
+
+# 6. Data Structures
+# Lists
+fruits = ["apple", "banana", "cherry"]
+fruits.append("date")  # Adds "date" to the list
+print(f"Fruits: {fruits}")
+
+# Tuples
+point = (2, 3)  # A point in 2D space
+print(f"Point: {point}")
+
+# Dictionaries
+person = {"name": "Alice", "age": 30}
+print(f"Name: {person['name']}")
+
+# Sets
+unique_numbers = {1, 2, 3, 3, 4}  # {1, 2, 3, 4}
+print(f"Unique Numbers: {unique_numbers}")
+
+# 7. Error Handling
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+
+# --- Basics of Object-Oriented Programming (OOP) ---
+
+# 1. Classes and Objects
+class Dog:
+    def __init__(self, name, age):
+        self.name = name  # Attribute
+        self.age = age    # Attribute
+
+    def bark(self):  # Method
+        return f"{self.name} says Woof!"
+
+# Creating an object of the Dog class
+my_dog = Dog("Buddy", 3)
+print(my_dog.bark())
+
+# 2. Inheritance
+class Animal:
+    def speak(self):
+        return "Animal speaks"
+
+class Cat(Animal):  # Cat inherits from Animal
+    def speak(self):
+        return "Meow"
+
+my_cat = Cat()
+print(my_cat.speak())  # Output: Meow
+
+# 3. Encapsulation
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance  # Private attribute
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def get_balance(self):
+        return self.__balance
+
+account = BankAccount(100)
+account.deposit(50)
+print(f"Account Balance: {account.get_balance()}")  # Output: 150
+
+# 4. Polymorphism
+class Bird:
+    def fly(self):
+        return "Flying in the sky"
+
+class Airplane:
+    def fly(self):
+        return "Flying in the air"
+
+def lets_fly(entity):
+    print(entity.fly())
+
+bird = Bird()
+plane = Airplane()
+
+lets_fly(bird)  # Output: Flying in the sky
+lets_fly(plane)  # Output: Flying in the air
+
+# End of Code
